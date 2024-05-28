@@ -17,11 +17,8 @@ export default function PromptCard({ post, handleTagClick, handleEdit, handleDel
 	}
 
 	return (
-		<div
-			className="prompt_card"			
-		>
-			<div 
-				className="flex justify-between items-start gap-5">
+		<div className="prompt_card">
+			<div className="flex justify-between items-start gap-5">
 					<div className="flex-1 flex justify-start items-center gap-3 cursor-pointer">
 						<Image
 							src={post.creator.image}
@@ -45,14 +42,16 @@ export default function PromptCard({ post, handleTagClick, handleEdit, handleDel
 							src={copied === post.prompt ? '/assets/icons/tick.svg' : '/assets/icons/copy.svg' }
 							width={12}
 							height={12}
+							alt="copy_btn"
 						/>
+					</div>
+				</div>
+
 
 						<p className="my-4 font-satoshi text-sm twxt-gray-700">{post.prompt}</p>
 						<p className="font-inter text-sm blue_gradient corsor-pointer" onClick={()=> handleTagClick && handleTagClick}>{post.tag}</p>
-					</div>
 					
-			</div>
-
-		</div>
+					
+			</div>		
 	)
 }
